@@ -1,4 +1,4 @@
-/* General reset and body styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,10 +9,10 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #000;
     color: #fff;
-    overflow: hidden; /* Avoid scroll bars */
+    overflow: hidden; 
 }
 
-/* Main container for the entire gallery */
+
 .gallery-container {
     display: flex;
     flex-direction: column;
@@ -22,20 +22,20 @@ body {
     padding: 20px;
 }
 
-/* Top section with 2 images and text */
+
 .top-section {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 50%; /* Takes half of the screen height */
+    height: 50%;
 }
 
-/* Top gallery section with 2 images */
+
 .top-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    width: 60%; /* Takes 60% of the width */
+    width: 60%; 
 }
 
 .gallery-item {
@@ -54,7 +54,7 @@ body {
 }
 
 .gallery-item:hover img {
-    transform: scale(1.1); /* Zoom effect on hover */
+    transform: scale(1.1); 
 }
 
 /* Text section on the right side of the top gallery */
@@ -63,17 +63,17 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    width: 35%; /* Takes 35% of the width */
+    width: 35%;
     padding-left: 20px;
     text-align: left;
 }
 
 .gallery-title {
-    font-family: 'Niagara Solid', sans-serif; /* Use Niagara Solid font */
-    font-size: 150px; /* Specific size */
-    font-weight: 400; /* Font weight */
-    line-height: 160.62px; /* Line height */
-    color: #e53935; /* Red text color */
+    font-family: 'Niagara Solid', sans-serif; 
+    font-size: 150px; 
+    font-weight: 400; 
+    line-height: 160.62px; 
+    color: #e53935; 
     margin-bottom: 10px;
     text-transform: uppercase;
 }
@@ -85,8 +85,9 @@ body {
 }
 
 .view-all {
-    color: #ffca28; /* Gold color for the link */
-    font-size: 18px;
+    font-family: 'Niagara Solid', sans-serif; 
+    color: #ffca28; 
+    font-size: 25px;
     font-weight: bold;
     text-decoration: none;
 }
@@ -100,21 +101,21 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    width: 100%; /* Full width */
-    height: 50%; /* Takes remaining half of the screen height */
+    width: 100%; 
+    height: 50%; 
     margin-top: 20px;
 }
 
 .gallery-item.slide-from-top {
-    animation: slideDown 1s forwards; /* Animation for top images */
+    animation: slideDown 1s forwards; 
 }
 
 .gallery-item.slide-from-left {
-    animation: slideLeft 1s forwards; /* Animation for bottom-left images */
+    animation: slideLeft 1s forwards;
 }
 
 .gallery-item.slide-from-right {
-    animation: slideRight 1s forwards; /* Animation for bottom-right images */
+    animation: slideRight 1s forwards;
 }
 
 /* Slide down from the top */
@@ -165,7 +166,7 @@ body {
     }
 
     .top-gallery {
-        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns on smaller screens */
+        grid-template-columns: repeat(2, 1fr); 
     }
 
     .gallery-info {
@@ -176,13 +177,13 @@ body {
     }
 
     .bottom-gallery {
-        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media screen and (max-width: 600px) {
     .top-gallery, .bottom-gallery {
-        grid-template-columns: 1fr; /* Stack images vertically on very small screens */
+        grid-template-columns: 1fr;
     }
 
     .gallery-title {
