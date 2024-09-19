@@ -1,0 +1,195 @@
+/* General reset and body styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden; /* Avoid scroll bars */
+}
+
+/* Main container for the entire gallery */
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Top section with 2 images and text */
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50%; /* Takes half of the screen height */
+}
+
+/* Top gallery section with 2 images */
+.top-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 60%; /* Takes 60% of the width */
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(-100px); /* Start off-screen */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Text section on the right side of the top gallery */
+.gallery-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 35%; /* Takes 35% of the width */
+    padding-left: 20px;
+    text-align: left;
+}
+
+.gallery-title {
+    font-family: 'Niagara Solid', sans-serif; /* Use Niagara Solid font */
+    font-size: 150px; /* Specific size */
+    font-weight: 400; /* Font weight */
+    line-height: 160.62px; /* Line height */
+    color: #e53935; /* Red text color */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.gallery-code {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.view-all {
+    color: #ffca28; /* Gold color for the link */
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+/* Bottom gallery section with 4 images */
+.bottom-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%; /* Full width */
+    height: 50%; /* Takes remaining half of the screen height */
+    margin-top: 20px;
+}
+
+.gallery-item.slide-from-top {
+    animation: slideDown 1s forwards; /* Animation for top images */
+}
+
+.gallery-item.slide-from-left {
+    animation: slideLeft 1s forwards; /* Animation for bottom-left images */
+}
+
+.gallery-item.slide-from-right {
+    animation: slideRight 1s forwards; /* Animation for bottom-right images */
+}
+
+/* Slide down from the top */
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide from the left */
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide from the right */
+@keyframes slideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design for smaller screens */
+@media screen and (max-width: 1024px) {
+    .gallery-container {
+        flex-direction: column;
+    }
+    
+    .top-section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .top-gallery {
+        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns on smaller screens */
+    }
+
+    .gallery-info {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .bottom-gallery {
+        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .top-gallery, .bottom-gallery {
+        grid-template-columns: 1fr; /* Stack images vertically on very small screens */
+    }
+
+    .gallery-title {
+        font-size: 48px;
+    }
+
+    .view-all {
+        font-size: 16px;
+    }
+}
