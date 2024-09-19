@@ -12,7 +12,7 @@ body {
     overflow: hidden; 
 }
 
-
+/* Main container for the entire gallery */
 .gallery-container {
     display: flex;
     flex-direction: column;
@@ -22,15 +22,15 @@ body {
     padding: 20px;
 }
 
-
+/* Top section with 2 images and text */
 .top-section {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 50%;
+    height: 50%; 
 }
 
-
+/* Top gallery section with 2 images */
 .top-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -49,12 +49,12 @@ body {
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Ensures image is fully visible without trimming */
     transition: transform 0.4s ease;
 }
 
 .gallery-item:hover img {
-    transform: scale(1.1); 
+    transform: scale(1.1); /* Zoom effect on hover */
 }
 
 /* Text section on the right side of the top gallery */
@@ -63,7 +63,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    width: 35%;
+    width: 35%; 
     padding-left: 20px;
     text-align: left;
 }
@@ -73,7 +73,7 @@ body {
     font-size: 150px; 
     font-weight: 400; 
     line-height: 160.62px; 
-    color: #e53935; 
+    color: #e53935;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
@@ -85,9 +85,8 @@ body {
 }
 
 .view-all {
-    font-family: 'Niagara Solid', sans-serif; 
     color: #ffca28; 
-    font-size: 25px;
+    font-size: 18px;
     font-weight: bold;
     text-decoration: none;
 }
@@ -111,11 +110,11 @@ body {
 }
 
 .gallery-item.slide-from-left {
-    animation: slideLeft 1s forwards;
+    animation: slideLeft 1s forwards; 
 }
 
 .gallery-item.slide-from-right {
-    animation: slideRight 1s forwards;
+    animation: slideRight 1s forwards; 
 }
 
 /* Slide down from the top */
@@ -177,13 +176,13 @@ body {
     }
 
     .bottom-gallery {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); 
     }
 }
 
 @media screen and (max-width: 600px) {
     .top-gallery, .bottom-gallery {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; 
     }
 
     .gallery-title {
